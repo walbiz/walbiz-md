@@ -8,5 +8,14 @@
     <string name="title_onBoarding_3">As your Wish</string>
     <string name="description_onBoarding_3">Make your franchises wishlist, go business with the fizz</string>
     <string name="button_signup_now">Sign up now!</string>
-    <string name="logo_blue">Walbiz Logo Blue</string>
+    <string name="register_page_title">Sign up to Walbiz!</string>
+    <string name="title_form_email">Email</string>
+    <string name="form_email">Email</string>
+    <string name="title_form_password">Password</string>
+    <string name="form_password">qwerty</string>
+    <string name="title_form_confirm_password">Confirm Password</string>
+    <string name="form_confirm_password">qwerty</string>
+    <string name="signup_button">Sign up</string>
+    <string name="or_register_with_google">- or sign up with email -</string>
+    <string name="signup_with_google_button">Sign up With Google</string>
 </resources>
