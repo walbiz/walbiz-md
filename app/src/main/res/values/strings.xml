@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">capstone</string>
+    <string name="logo_blue">Walbiz Logo Blue</string>
+    <string name="title_onBoarding_1">As You Like</string>
+    <string name="description_onBoarding_1">WalBiz helps you find your desired franchise as your heart said 🫶🏻</string>
+    <string name="title_onBoarding_2">As Your Budget</string>
+    <string name="description_onBoarding_2">Adjust to your budget, best profit as you expected</string>
+    <string name="title_onBoarding_3">As your Wish</string>
+    <string name="description_onBoarding_3">Make your franchises wishlist, go business with the fizz</string>
+    <string name="button_signup_now">Sign up now!</string>
+    <string name="logo_blue">Walbiz Logo Blue</string>
 </resources>
