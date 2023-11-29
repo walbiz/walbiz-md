@@ -189,7 +189,7 @@
             android:id="@+id/buttonRegisterGoogle"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:backgroundTint="@color/yellow_primary"
+            android:backgroundTint="@color/white"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginTop="500dp"
