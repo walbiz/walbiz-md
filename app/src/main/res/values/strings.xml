@@ -36,4 +36,22 @@
     <string name="website_franchise">alfamart.co.id</string>
     <string name="phone_franchise_title">Phone Number</string>
     <string name="phone_franchise">081228934844</string>
+    <string name="email_franchise_title">Email</string>
+    <string name="email_franchise">alfamart@mail.co.id</string>
+    <string name="est_franchise_title">Established</string>
+    <string name="est_franchise">2020</string>
+    <string name="profit_franchise_title">Net Profit Per Month</string>
+    <string name="profit_franchise">Rp. 5.000.000</string>
+    <string name="location_franchise_title">Company Address</string>
+    <string name="location_franchise">Jl. Mayor Sunaryo, Klaten</string>
+    <string name="turn_of_invesment_title">Turn of Invesment</string>
+    <string name="turn_of_investment">40%</string>
+    <string name="wish_button">Wish</string>
+    <string name="wishlist_title">Wishlist</string>
+    <string name="add_recomendation_button">Get Recomendation</string>
+    <string name="title_form_category">Category</string>
+    <string name="title_form_type">Type Franchise</string>
+    <string name="title_form_cost">Cost</string>
+    <string name="recomendation_for_you">Recomendation For You</string>
+
 </resources>

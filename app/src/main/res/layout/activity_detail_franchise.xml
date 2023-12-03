@@ -201,5 +201,169 @@
         app:layout_constraintTop_toTopOf="@+id/franchise_company"
         tools:text="@string/website_franchise" />
 
+    <TextView
+        android:id="@+id/phone_title"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/franchise_company"
+        tools:text="@string/phone_franchise_title" />
+
+    <TextView
+        android:id="@+id/phone_franchise"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_phone"
+        android:drawablePadding="8dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/phone_title"
+        app:layout_constraintStart_toStartOf="@+id/phone_title"
+        app:layout_constraintTop_toBottomOf="@+id/phone_title"
+        tools:text="@string/phone_franchise" />
+
+    <TextView
+        android:id="@+id/title_email"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/phone_title"
+        app:layout_constraintTop_toTopOf="@+id/phone_title"
+        tools:text="@string/email_franchise_title" />
+
+    <TextView
+        android:id="@+id/email_franchise_title"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_email"
+        android:drawablePadding="8dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/title_email"
+        app:layout_constraintStart_toStartOf="@+id/title_email"
+        app:layout_constraintTop_toTopOf="@+id/phone_franchise"
+        tools:text="@string/email_franchise" />
+
+    <TextView
+        android:id="@+id/title_est"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_franchise"
+        tools:text="@string/est_franchise_title" />
+
+    <TextView
+        android:id="@+id/established_franchise"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_date"
+        android:drawablePadding="8dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/title_est"
+        app:layout_constraintStart_toStartOf="@+id/title_est"
+        app:layout_constraintTop_toBottomOf="@+id/title_est"
+        tools:text="@string/est_franchise" />
+
+    <TextView
+        android:id="@+id/profit_title"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/title_est"
+        app:layout_constraintTop_toTopOf="@+id/title_est"
+        tools:text="@string/profit_franchise_title" />
+
+    <TextView
+        android:id="@+id/profit_franchise"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_profit"
+        android:drawablePadding="8dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/profit_title"
+        app:layout_constraintStart_toStartOf="@+id/profit_title"
+        app:layout_constraintTop_toTopOf="@+id/established_franchise"
+        tools:text="@string/profit_franchise" />
+
+    <TextView
+        android:id="@+id/location_title"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/established_franchise"
+        tools:text="@string/location_franchise_title" />
+
+    <TextView
+        android:id="@+id/locationi_franchise"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_location"
+        android:drawablePadding="8dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/location_title"
+        app:layout_constraintStart_toStartOf="@+id/location_title"
+        app:layout_constraintTop_toBottomOf="@+id/location_title"
+        tools:text="@string/location_franchise" />
+
+    <TextView
+        android:id="@+id/turn_invesment_title"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/location_title"
+        app:layout_constraintTop_toTopOf="@+id/location_title"
+        tools:text="@string/turn_of_invesment_title" />
+
+    <TextView
+        android:id="@+id/turn_invesment"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_return_of_invesment"
+        android:drawablePadding="8dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/turn_invesment_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/turn_invesment_title"
+        app:layout_constraintTop_toBottomOf="@+id/location_title"
+        tools:text="@string/turn_of_investment" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/wishButton"
+        android:contentDescription="@string/wish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="@color/yellow_primary"
+        android:src="@drawable/baseline_favorite_border_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
