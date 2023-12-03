@@ -176,13 +176,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="232dp"
         android:layout_marginEnd="32dp"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="502dp"
+        app:layout_constraintTop_toBottomOf="@+id/title_discover"
         tools:text="For your bussiness" />
 
 
