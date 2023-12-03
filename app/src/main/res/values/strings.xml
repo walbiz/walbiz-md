@@ -34,4 +34,6 @@
     <string name="company_franchise">Akila Dental, PT</string>
     <string name="website_franchise_title">Website</string>
     <string name="website_franchise">alfamart.co.id</string>
+    <string name="phone_franchise_title">Phone Number</string>
+    <string name="phone_franchise">081228934844</string>
 </resources>
