@@ -14,7 +14,6 @@
         android:layout_marginBottom="252dp"
         android:scaleType="centerCrop"
         android:src="@drawable/image_ob1"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3"
         tools:layout_editor_absoluteX="411dp" />
@@ -52,12 +51,9 @@
         android:id="@+id/imageOb2"
         android:layout_width="0dp"
         android:layout_height="410dp"
-        android:layout_marginBottom="252dp"
         android:scaleType="centerCrop"
         android:src="@drawable/image_ob2"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
         tools:layout_editor_absoluteX="411dp" />
 
     <TextView
@@ -94,12 +90,9 @@
         android:id="@+id/imageOb3"
         android:layout_width="0dp"
         android:layout_height="410dp"
-        android:layout_marginBottom="252dp"
         android:scaleType="centerCrop"
         android:src="@drawable/image_ob3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
         tools:layout_editor_absoluteX="411dp" />
 
     <TextView
@@ -134,9 +127,9 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="155dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="180dp"
         app:altSrc="@drawable/ic_circle_full_24"
         app:layout_constraintEnd_toStartOf="@+id/menu2"
         app:layout_constraintHorizontal_bias="0.5"
@@ -147,8 +140,8 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:altSrc="@drawable/ic_circle_full_24"
         app:layout_constraintBottom_toBottomOf="@+id/menu1"
         app:layout_constraintEnd_toStartOf="@+id/menu3"
@@ -161,8 +154,8 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:altSrc="@drawable/ic_circle_full_24"
         app:layout_constraintBottom_toBottomOf="@+id/menu2"
         app:layout_constraintEnd_toStartOf="@+id/menu4"
