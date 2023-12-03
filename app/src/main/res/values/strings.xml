@@ -53,5 +53,6 @@
     <string name="title_form_type">Type Franchise</string>
     <string name="title_form_cost">Cost</string>
     <string name="recomendation_for_you">Recomendation For You</string>
+    <string name="recomendation">Recomendation</string>
 
 </resources>
