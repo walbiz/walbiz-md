@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fanchise.DetailFranchiseActivity">
+
+    <ImageView
+        android:id="@+id/image_franchise"
+        android:layout_width="match_parent"
+        android:layout_height="185dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/name_franchise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        tools:text="@string/name_franchise"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_franchise" />
+
+    <TextView
+        android:id="@+id/description_franchise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_franchise"
+        tools:text="@string/description_franchise"
+        android:textColor="@color/dark_grey"
+        android:gravity="start|left"/>
+
+    <TextView
+        android:id="@+id/franchise_category_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/category_franchise_title"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_franchise" />
+
+    <TextView
+        android:id="@+id/category_franchise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_categoryfranchise"
+        android:drawablePadding="8dp"
+        android:textSize="12sp"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintEnd_toEndOf="@+id/franchise_category_title"
+        app:layout_constraintStart_toStartOf="@+id/franchise_category_title"
+        app:layout_constraintTop_toBottomOf="@+id/franchise_category_title"
+        tools:text="@string/category_franchise" />
+
+    <TextView
+        android:id="@+id/type_franchise_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/type_franchise_title"
+        tools:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/franchise_category_title"
+        app:layout_constraintTop_toTopOf="@+id/franchise_category_title" />
+
+
+    <TextView
+        android:id="@+id/type_franchise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_type"
+        android:drawablePadding="8dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/type_franchise_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/type_franchise_title"
+        app:layout_constraintTop_toTopOf="@+id/category_franchise"
+        tools:text="@string/type_franchise" />
+
+    <TextView
+        android:id="@+id/franchise_cost_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        tools:text="@string/cost_franchise_title"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_franchise" />
+
+    <TextView
+        android:id="@+id/cost_franchise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/franchise_cost_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/franchise_cost_title"
+        app:layout_constraintTop_toBottomOf="@+id/franchise_cost_title"
+        tools:text="@string/cost_franchise"
+        android:textSize="12sp"
+        android:textColor="@color/dark_grey"
+        android:drawableLeft="@drawable/icon_modal"
+        android:drawablePadding="8dp"/>
+
+    <TextView
+        android:id="@+id/franchise_outlet_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/type_franchise"
+        app:layout_constraintTop_toTopOf="@+id/franchise_cost_title"
+        tools:text="@string/outlet_franchise_title" />
+
+    <TextView
+        android:id="@+id/outlet_franchise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_category"
+        android:drawablePadding="8dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/franchise_outlet_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/franchise_outlet_title"
+        app:layout_constraintTop_toTopOf="@+id/cost_franchise"
+        tools:text="@string/outlet_franchise" />
+
+    <TextView
+        android:id="@+id/franchise_company_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cost_franchise"
+        tools:text="@string/company_franchise_title" />
+
+    <TextView
+        android:id="@+id/franchise_company"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="@string/company_franchise"
+        android:textSize="12sp"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintEnd_toEndOf="@+id/franchise_company_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/franchise_company_title"
+        app:layout_constraintTop_toBottomOf="@+id/franchise_company_title"
+        android:drawableLeft="@drawable/icon_company"
+        android:drawablePadding="8dp"/>
+
+    <TextView
+        android:id="@+id/franchise_website_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/franchise_company_title"
+        tools:layout_editor_absoluteX="234dp"
+        tools:text="@string/website_franchise_title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

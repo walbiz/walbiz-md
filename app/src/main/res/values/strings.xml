@@ -18,4 +18,20 @@
     <string name="signup_button">Sign up</string>
     <string name="or_register_with_google">- or sign up with email -</string>
     <string name="signup_with_google_button">Sign up With Google</string>
+    <string name="card_title">Recomendation</string>
+    <string name="card_description">Get your franchises recommendation according to your preferences!</string>
+    <string name="description_franchise">Pizza Hut franchise is a business opportunity that allows individuals or groups to own and operate a Pizza Hut restaurant outlet using the brand, operational system, and support provided by Pizza Hut as the franchisor. Pizza Hut is known as one of the leading pizza brands globally with a diverse menu, including pizzas, pasta, vegetables, and other dishes.</string>
+    <string name="name_franchise">Pizza Hut</string>
+    <string name="category_franchise_title">Franchise Category</string>
+    <string name="category_franchise">Food and Baverage</string>
+    <string name="type_franchise_title">Franchise Type</string>
+    <string name="type_franchise">Franchise</string>
+    <string name="cost_franchise_title">Cost</string>
+    <string name="cost_franchise">Rp.1.000.000</string>
+    <string name="outlet_franchise_title">Total Oulet</string>
+    <string name="outlet_franchise">100</string>
+    <string name="company_franchise_title">Company Name</string>
+    <string name="company_franchise">Akila Dental, PT</string>
+    <string name="website_franchise_title">Website</string>
+    <string name="website_franchise">alfamart.co.id</string>
 </resources>
