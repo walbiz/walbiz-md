@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -84,107 +85,129 @@
 
     </androidx.cardview.widget.CardView>
 
+    <!--    view card-->
+
     <TextView
         android:id="@+id/title_discover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="15dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
         tools:text="Discover" />
 
-<!--    view card-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/item_franchise"
-        android:layout_width="155dp"
-        android:layout_height="205dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_discover">
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/item_franchise"-->
+<!--        android:layout_width="155dp"-->
+<!--        android:layout_height="205dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        app:cardCornerRadius="5dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/title_discover">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
 
-            <ImageView
-                android:id="@+id/image_franchise"
-                android:layout_width="155dp"
-                android:layout_height="125dp"
-                android:scaleType="centerCrop"
-                tools:src="@tools:sample/avatars" />
+<!--            <ImageView-->
+<!--                android:id="@+id/image_franchise"-->
+<!--                android:layout_width="155dp"-->
+<!--                android:layout_height="125dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                tools:src="@tools:sample/avatars" />-->
 
-            <TextView
-                android:id="@+id/name_franchise"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="Franchise Name"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:id="@+id/name_franchise"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginEnd="8dp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="Franchise Name"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:id="@+id/modal_franchise"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="8dp"
-                android:drawableLeft="@drawable/icon_modal"
-                android:drawablePadding="8dp"
-                android:text="Rp. 1.000.000"
-                app:layout_constraintEnd_toEndOf="@+id/name_franchise"
-                app:layout_constraintStart_toStartOf="@+id/name_franchise"
-                app:layout_constraintTop_toBottomOf="@+id/name_franchise" />
+<!--            <TextView-->
+<!--                android:id="@+id/modal_franchise"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:layout_marginEnd="8dp"-->
+<!--                android:drawableLeft="@drawable/icon_modal"-->
+<!--                android:drawablePadding="8dp"-->
+<!--                android:text="Rp. 1.000.000"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/name_franchise"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/name_franchise"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/name_franchise" />-->
 
-            <TextView
-                android:id="@+id/category_franchise"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="8dp"
-                android:drawableLeft="@drawable/icon_category"
-                android:drawablePadding="8dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="Food and Baverage"
-                app:layout_constraintEnd_toEndOf="@+id/name_franchise"
-                app:layout_constraintStart_toStartOf="@+id/name_franchise"
-                app:layout_constraintTop_toBottomOf="@+id/name_franchise" />
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/category_franchise"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:layout_marginEnd="8dp"-->
+<!--                android:drawableLeft="@drawable/icon_category"-->
+<!--                android:drawablePadding="8dp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="Food and Baverage"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/name_franchise"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/name_franchise"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/name_franchise" />-->
+<!--        </LinearLayout>-->
 
-    </androidx.cardview.widget.CardView>
+<!--    </androidx.cardview.widget.CardView>-->
 
 <!--    end view card -->
+
+    <!--    Bottom App Bar -->
 
     <TextView
         android:id="@+id/title_article"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="232dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="196dp"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.133"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_discover"
         tools:text="For your bussiness" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="11dp"
+        android:src="@drawable/icon_menu_franchise"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

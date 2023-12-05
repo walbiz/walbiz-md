@@ -54,5 +54,11 @@
     <string name="title_form_cost">Cost</string>
     <string name="recomendation_for_you">Recomendation For You</string>
     <string name="recomendation">Recomendation</string>
+    <string name="title_activity_aactivity">AActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_form_name">Name</string>
+    <string name="form_name">Your name</string>
 
 </resources>
