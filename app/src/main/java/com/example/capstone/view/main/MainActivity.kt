@@ -1,4 +1,4 @@
-package com.example.capstone
+package com.example.capstone.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

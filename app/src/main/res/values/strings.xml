@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">capstone</string>
+    <string name="welcome">Welcome to WalBiz!</string>
+    <string name="welcome_greeting">\"Franchise Made Simple\"</string>
+    <string name="login">Log In</string>
+    <string name="register">Register</string>
+    <string name="signin_greeting">Sign in to WalBiz!</string>v
+    <string name="email">E-mail</string>
+    <string name="email_hint">Your E-Mail</string>
+    <string name="pass">Password</string>
+    <string name="pass_hint">Your Password</string>
+    <string name="signin">Sign in</string>
+    <string name="signupchoices">or sign in with e-mail</string>
+    <string name="signinWithGoogle">Sign in with Google</string>
+    <string name="sign_google">- or sign in with Google -</string>
+    <string name="name">Faradina Fachrizal</string>
+    <string name="username">\@faraarizal</string>
+    <string name="value_email">example\@gmail.com</string>
+    <string name="language">Language</string>
+    <string name="article_title">Franchise Boom: Entrepreneurs Flock to Proven Business Models</string>
+    <string name="article_desc">likely discusses the current trend of entrepreneurs increasingly opting for...</string>
+    <string name="article">Article</string>
+    <string name="author_name">Author Name</string>
+    <string name="date_post">14 November 2023</string>
+    <string name="content_article">The news article "Franchise Boom: Entrepreneurs Flock to Proven Business Models" likely discusses the current trend of entrepreneurs increasingly opting for franchise opportunities. The theme suggests that entrepreneurs are attracted to the reliability and success of established business models offered by franchises. The article might delve into the reasons behind this surge in interest, exploring factors such as the appeal of proven systems, reduced business risks, and the potential for quicker returns on investment within the franchise sector.
+        Additionally, it could highlight notable success stories and provide insights into the factors contributing to the growth of franchising in the business landscape.</string>
+    <string name="source">Source:</string>
+    <string name="link_source">Link.com/path/path.path.path</string>
 </resources>
