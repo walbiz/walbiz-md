@@ -7,6 +7,7 @@
     <string name="signin_greeting">Sign in to WalBiz!</string>v
     <string name="email">E-mail</string>
     <string name="email_hint">Your E-Mail</string>
+    <string name="registrasi_duplicate">Email sudah terdaftar</string>
     <string name="pass">Password</string>
     <string name="pass_hint">Your Password</string>
     <string name="signin">Sign in</string>
@@ -18,7 +19,10 @@
     <string name="value_email">example\@gmail.com</string>
     <string name="language">Language</string>
     <string name="article_title">Franchise Boom: Entrepreneurs Flock to Proven Business Models</string>
-    <string name="article_desc">likely discusses the current trend of entrepreneurs increasingly opting for...</string>
+    <string name="article_desc">likely discusses the current trend of entrepreneurs increasingly opting for...\
+    dfmapijdfipja
+    ajdfjafjdafdjsaifjdsafjsifjaifdan
+    ajnndfijsaifdanfdioohafij</string>
     <string name="article">Article</string>
     <string name="author_name">Author Name</string>
     <string name="date_post">14 November 2023</string>
@@ -26,4 +30,17 @@
         Additionally, it could highlight notable success stories and provide insights into the factors contributing to the growth of franchising in the business landscape.</string>
     <string name="source">Source:</string>
     <string name="link_source">Link.com/path/path.path.path</string>
+
+     //Register
+    <string name="register_page_title">Sign up to WalBiz!</string>
+    <string name="title_form_confirm_password">Confirm Password</string>
+    <string name="signup_button">Sign up</string>
+    <string name="title_form_name">Name</string>
+    <string name="form_name">Your Name</string>
+    <string name="reg_success">Pendaftaran Berhasil</string>
+    <string name="reg_failed">Pendaftaran Gagal</string>
+    <string name="login_failed">Login Gagal</string>
+    <string name="error_401">Data kurang tepat. Periksa kembali Email atau Password Anda</string>
+    <string name="error_400">Harap lengkapi inputan sebelum melanjutkan</string>
+
 </resources>

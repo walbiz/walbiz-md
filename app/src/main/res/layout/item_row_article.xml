@@ -10,65 +10,64 @@
     android:layout_marginTop="4dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp"
-    card_view:cardCornerRadius="8dp">
+    card_view:cardCornerRadius="10dp"
+    android:backgroundTint="@color/blue"
+    card_view:cardElevation="5dp"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="312dp"
         android:backgroundTint="@color/blue"
-        android:paddingTop="8dp"
         android:paddingBottom="0dp">
 
         <ImageView
             android:id="@+id/img_story"
             android:layout_width="0dp"
-            android:layout_height="170dp"
+            android:layout_height="180dp"
             android:scaleType="centerCrop"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             tools:ignore="ImageContrastCheck"
-            tools:src="@drawable/article"/>
+            tools:src="@drawable/article" />
 
         <View
             android:id="@+id/view2"
-            android:layout_width="392dp"
-            android:layout_height="132dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="4dp"
-            android:background="@color/blue"
+            android:layout_width="380dp"
+            android:layout_height="match_parent"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.333"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/img_story"
-            card_view:layout_constraintVertical_bias="0.0" />
+            card_view:layout_constraintHorizontal_bias="1.0"
+            card_view:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_name"
-            android:layout_width="328dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_toEndOf="@id/img_story"
             android:fontFamily="@font/outfit_medium"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintHorizontal_bias="1.0"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="@+id/view2"
+            card_view:layout_constraintTop_toBottomOf="@+id/img_story"
             tools:text="@string/article_title" />
 
         <TextView
             android:id="@+id/tv_desc"
-            android:layout_width="328dp"
-            android:layout_height="37dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="19dp"
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
             android:layout_toEndOf="@id/img_story"
             android:ellipsize="end"
             android:fontFamily="@font/inter_reguler"
@@ -76,10 +75,11 @@
             android:textColor="@color/white"
             android:textSize="12sp"
             card_view:layout_constraintBottom_toBottomOf="@+id/view2"
-            card_view:layout_constraintEnd_toEndOf="@+id/tv_name"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.0"
-            card_view:layout_constraintStart_toStartOf="@+id/tv_name"
+            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/tv_name"
+            card_view:layout_constraintVertical_bias="0.0"
             tools:text="@string/article_desc" />
 
 

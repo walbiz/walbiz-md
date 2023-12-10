@@ -18,15 +18,13 @@
         android:id="@+id/logout_button"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="26dp"
         android:background="@drawable/rounded"
         android:padding="5dp"
-        app:srcCompat="@drawable/baseline_logout_24"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="334dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_logout_24" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
@@ -57,7 +55,7 @@
         android:id="@+id/email_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="26dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/outfit_medium"
         android:text="@string/email"
@@ -70,13 +68,13 @@
         android:id="@+id/value_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/value_email"
+        android:layout_marginEnd="26dp"
         android:fontFamily="@font/outfit_regular"
+        android:text="@string/value_email"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/email_profile"
         app:layout_constraintTop_toTopOf="@+id/email_profile" />
 
@@ -91,6 +89,15 @@
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/email_profile"
         app:layout_constraintTop_toBottomOf="@+id/email_profile" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/language"
+        app:layout_constraintEnd_toEndOf="@+id/value_email"
+        app:layout_constraintTop_toTopOf="@+id/language"
+        app:srcCompat="@drawable/round_arrow_right_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
