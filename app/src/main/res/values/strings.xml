@@ -31,7 +31,7 @@
     <string name="source">Source:</string>
     <string name="link_source">Link.com/path/path.path.path</string>
 
-     //Register
+    //Register
     <string name="register_page_title">Sign up to WalBiz!</string>
     <string name="title_form_confirm_password">Confirm Password</string>
     <string name="signup_button">Sign up</string>
@@ -42,5 +42,9 @@
     <string name="login_failed">Login Gagal</string>
     <string name="error_401">Data kurang tepat. Periksa kembali Email atau Password Anda</string>
     <string name="error_400">Harap lengkapi inputan sebelum melanjutkan</string>
+    <string name="searchbar">Search article</string>
+    <string name="text_null">no found data</string>
+    <string name="exit_message">Are you sure want to exit from aplication?</string>
+    <string name="logout_cancel">Cancel</string>
 
 </resources>

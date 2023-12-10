@@ -26,15 +26,15 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
     }
 
     private object Keys {
-        val USER_EMAIL = stringPreferencesKey("token")
+        val USER_TOKEN = stringPreferencesKey("token")
         val USER_NAME = stringPreferencesKey("user_name")
     }
 
-    fun getToken(): Flow<String?> = dataStore.data.map { it[Keys.USER_EMAIL] }
+    fun getToken(): Flow<String?> = dataStore.data.map { it[Keys.USER_TOKEN] }
 
     suspend fun saveToken(token: String) {
         dataStore.edit { preferences ->
-            preferences[Keys.USER_EMAIL] = token
+            preferences[Keys.USER_TOKEN] = token
         }
     }
 
@@ -48,7 +48,7 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
 
     suspend fun clearDataStore() {
         dataStore.edit { preferences ->
-            preferences.remove(Keys.USER_EMAIL)
+            preferences.remove(Keys.USER_TOKEN)
             preferences.remove(Keys.USER_NAME)
         }
     }

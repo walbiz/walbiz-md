@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class AllArticleResponse(
 
 	@field:SerializedName("nodes")
-	val nodes: List<ListArticleItem>,
+	val nodes: List<ListArticleItem> = emptyList(),
 
 	@field:SerializedName("totalCount")
 	val totalCount: String,

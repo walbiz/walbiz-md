@@ -12,8 +12,7 @@
     android:layout_marginBottom="8dp"
     card_view:cardCornerRadius="10dp"
     android:backgroundTint="@color/blue"
-    card_view:cardElevation="5dp"
-    >
+    card_view:cardElevation="5dp" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +21,7 @@
         android:paddingBottom="0dp">
 
         <ImageView
-            android:id="@+id/img_story"
+            android:id="@+id/img_article"
             android:layout_width="0dp"
             android:layout_height="180dp"
             android:scaleType="centerCrop"
@@ -43,13 +42,13 @@
             card_view:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/tv_title_article"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_toEndOf="@id/img_story"
+            android:layout_toEndOf="@id/img_article"
             android:fontFamily="@font/outfit_medium"
             android:textColor="@color/white"
             android:textSize="14sp"
@@ -57,7 +56,7 @@
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="1.0"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/img_story"
+            card_view:layout_constraintTop_toBottomOf="@+id/img_article"
             tools:text="@string/article_title" />
 
         <TextView
@@ -68,7 +67,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="8dp"
-            android:layout_toEndOf="@id/img_story"
+            android:layout_toEndOf="@id/img_article"
             android:ellipsize="end"
             android:fontFamily="@font/inter_reguler"
             android:maxLines="2"
@@ -78,7 +77,7 @@
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_name"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_title_article"
             card_view:layout_constraintVertical_bias="0.0"
             tools:text="@string/article_desc" />
 

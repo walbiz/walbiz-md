@@ -28,7 +28,7 @@ interface ApiService {
         @Field("password") password: String
     ): LoginResponse
 
-    @FormUrlEncoded
+
     @GET("articles")
     suspend fun getArticles(
         @Header("Authorization") token: String,

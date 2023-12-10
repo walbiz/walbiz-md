@@ -19,7 +19,7 @@ class ArticlePagingSource(private val apiService: ApiService, private val token:
             LoadResult.Page(
                 data = data,
                 prevKey = if (position == INITIAL_PAGE_INDEX) null else position - 1,
-                nextKey = if (data!!.isEmpty()) null else position + 1
+                nextKey = if (data.isEmpty()) null else position + 1
             )
         } catch (exception: Exception) {
             return LoadResult.Error(exception)
