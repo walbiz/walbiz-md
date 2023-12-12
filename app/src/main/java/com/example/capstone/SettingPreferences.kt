@@ -28,6 +28,7 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
     private object Keys {
         val USER_TOKEN = stringPreferencesKey("token")
         val USER_NAME = stringPreferencesKey("user_name")
+        val EMAIL = stringPreferencesKey("email")
     }
 
     fun getToken(): Flow<String?> = dataStore.data.map { it[Keys.USER_TOKEN] }
@@ -40,9 +41,17 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
 
     fun getUserName(): Flow<String?> = dataStore.data.map { it[Keys.USER_NAME] }
 
+    fun getEmail(): Flow<String?> = dataStore.data.map { it[Keys.EMAIL] }
+
     suspend fun saveUserName(userName: String) {
         dataStore.edit { preferences ->
             preferences[Keys.USER_NAME] = userName
+        }
+    }
+
+    suspend fun saveEmail(email: String) {
+        dataStore.edit { preferences ->
+            preferences[Keys.EMAIL] = email
         }
     }
 
@@ -50,6 +59,7 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
         dataStore.edit { preferences ->
             preferences.remove(Keys.USER_TOKEN)
             preferences.remove(Keys.USER_NAME)
+            preferences.remove(Keys.EMAIL)
         }
     }
 

@@ -46,5 +46,8 @@
     <string name="text_null">no found data</string>
     <string name="exit_message">Are you sure want to exit from aplication?</string>
     <string name="logout_cancel">Cancel</string>
+    <string name="logout_confirm">Logout Confirmation</string>
+    <string name="logout_message">Are you sure you want to log out?</string>
+    <string name="setting">Settings</string>
 
 </resources>

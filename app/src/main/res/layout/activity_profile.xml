@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".view.profile.ProfileActivity">
 
+
     <View
         android:id="@+id/color_view"
         android:layout_width="wrap_content"
@@ -15,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/logout_button"
+        android:id="@+id/action_logout"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginTop="26dp"
@@ -121,6 +122,4 @@
             app:srcCompat="@drawable/round_arrow_right_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
