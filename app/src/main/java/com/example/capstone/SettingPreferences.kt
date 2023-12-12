@@ -52,4 +52,5 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
             preferences.remove(Keys.USER_NAME)
         }
     }
+
 }
