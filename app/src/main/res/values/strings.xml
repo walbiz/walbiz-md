@@ -19,10 +19,7 @@
     <string name="value_email">example\@gmail.com</string>
     <string name="language">Language</string>
     <string name="article_title">Franchise Boom: Entrepreneurs Flock to Proven Business Models</string>
-    <string name="article_desc">likely discusses the current trend of entrepreneurs increasingly opting for...\
-    dfmapijdfipja
-    ajdfjafjdafdjsaifjdsafjsifjaifdan
-    ajnndfijsaifdanfdioohafij</string>
+    <string name="article_desc">likely discusses the current trend of entrepreneurs increasingly opting for...</string>
     <string name="article">Article</string>
     <string name="author_name">Author Name</string>
     <string name="date_post">14 November 2023</string>
@@ -46,5 +43,6 @@
     <string name="text_null">no found data</string>
     <string name="exit_message">Are you sure want to exit from aplication?</string>
     <string name="logout_cancel">Cancel</string>
+
 
 </resources>

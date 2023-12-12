@@ -3,6 +3,7 @@ package com.example.capstone.data.api.retrofit
 import com.example.capstone.data.api.response.AllArticleResponse
 import com.example.capstone.data.api.response.DetailArticleResponse
 import com.example.capstone.data.api.response.LoginResponse
+import com.example.capstone.data.api.response.ProfileResponse
 import com.example.capstone.data.api.response.RegisterResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -10,8 +11,16 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
+    @FormUrlEncoded
+    @GET("users")
+    suspend fun getUsersProfile(
+        @Header("Authorization") token: String,
+        @Path("id") storyId: String
+    ): ProfileResponse
+
     @FormUrlEncoded
     @POST("users/register")
     suspend fun register(
@@ -31,15 +40,13 @@ interface ApiService {
 
     @GET("articles")
     suspend fun getArticles(
-        @Header("Authorization") token: String,
-        position: Int,
-        loadSize: Int,
+        @Query("page") page: Int = 1,
+        @Query("size") size: Int = 20
     ): AllArticleResponse
 
     @FormUrlEncoded
     @GET("articles/{id}")
     suspend fun getArticlesById(
-        @Header("Authorization") token: String,
         @Path("id") storyId: String
     ): DetailArticleResponse
 }

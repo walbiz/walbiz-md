@@ -30,9 +30,9 @@ class ArticleAdapter : PagingDataAdapter<ListArticleItem, ArticleAdapter.ListVie
     }
     class ListViewHolder(binding: ItemRowArticleBinding) : RecyclerView.ViewHolder(binding.root) {
         private val cardImg: View = binding.cardView
-        val articleImg: ImageView = binding.imgArticle
-        val titleArticle: TextView = binding.tvTitleArticle
-        val descArticle: TextView = binding.tvDesc
+        private val articleImg: ImageView = binding.imgArticle
+        private val titleArticle: TextView = binding.tvTitleArticle
+        private val descArticle: TextView = binding.tvDesc
 
         fun bind(article: ListArticleItem) {
             Glide.with(itemView.context)

@@ -1,11 +1,11 @@
-package com.example.capstone.view.main
+package com.example.capstone.view.article
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.capstone.data.api.response.ListArticleItem
 import com.example.capstone.data.api.retrofit.ApiService
 
-class ArticlePagingSource(private val apiService: ApiService, private val token: String) : PagingSource<Int, ListArticleItem>() {
+class ArticlePagingSource(private val apiService: ApiService) : PagingSource<Int, ListArticleItem>() {
     private companion object {
         const val INITIAL_PAGE_INDEX = 1
     }
@@ -13,7 +13,7 @@ class ArticlePagingSource(private val apiService: ApiService, private val token:
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ListArticleItem> {
         return try {
             val position = params.key ?: INITIAL_PAGE_INDEX
-            val response = apiService.getArticles("Bearer $token", position, params.loadSize)
+            val response = apiService.getArticles(position, params.loadSize)
             val data = response.nodes
 
             LoadResult.Page(

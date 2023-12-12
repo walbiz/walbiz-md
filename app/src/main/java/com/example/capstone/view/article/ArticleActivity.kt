@@ -2,10 +2,8 @@ package com.example.capstone.view.article
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.R
@@ -13,8 +11,6 @@ import com.example.capstone.SettingPreferences
 import com.example.capstone.data.api.ArticleRepository
 import com.example.capstone.data.api.retrofit.ApiConfig
 import com.example.capstone.databinding.ActivityArticleBinding
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 
 class ArticleActivity : AppCompatActivity() {
     private lateinit var binding: ActivityArticleBinding
@@ -22,7 +18,6 @@ class ArticleActivity : AppCompatActivity() {
     private lateinit var articleAdapter: ArticleAdapter
     private lateinit var settingPreferences: SettingPreferences
     private lateinit var articleViewModel: ArticleViewModel
-    private var token: String? = null
     private var backPressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +36,7 @@ class ArticleActivity : AppCompatActivity() {
         articleAdapter = ArticleAdapter()
         recyclerView.adapter = articleAdapter
 
-        val articleRepository = ArticleRepository(ApiConfig.getApiService(), token?: "")
+        val articleRepository = ArticleRepository(ApiConfig.getApiService())
         articleViewModel = ViewModelProvider(this, ArticleViewModelFactory(articleRepository))[ArticleViewModel::class.java]
         articleViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ArticleViewModel::class.java]
 
