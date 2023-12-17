@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "660768029903",
+    "project_id": "walbiz-project",
+    "storage_bucket": "walbiz-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660768029903:android:0d5141679977c8c63a0bba",
+        "android_client_info": {
+          "package_name": "com.example.capstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660768029903-gqlr42emalt4ir9gf1oog9fsjq3dmtgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmJWmn3qhFvumDSGHdu6PFUNz9_-2UJzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660768029903-gqlr42emalt4ir9gf1oog9fsjq3dmtgt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
