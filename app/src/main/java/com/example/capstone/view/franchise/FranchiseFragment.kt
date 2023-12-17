@@ -63,12 +63,12 @@ class FranchiseFragment : Fragment() {
             ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[FranchiseViewModel::class.java]
 
 
-        franchiseViewModel.getFranchises()
+//        franchiseViewModel.getFranchises()
         franchiseViewModel.franchises.observe(viewLifecycleOwner) { franchises ->
 
 //            franchiseAdapter.submitData(lifecycle, franchises)
 
-            franchiseAdapter.submitList(franchises)
+            franchiseAdapter.submitData(lifecycle, franchises)
 
 //            Log.d("Franchise Fragment", franchiseAdapter.snapshot().items.toString())
         }

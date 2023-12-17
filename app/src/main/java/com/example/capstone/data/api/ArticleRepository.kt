@@ -12,7 +12,7 @@ class ArticleRepository(private val apiService: ApiService, private val token: S
     fun getArticlesPaging(): Flow<PagingData<ListArticleItem>> {
         val pagingSourceFactory = { ArticlePagingSource(apiService, token) }
         return Pager(
-            config = PagingConfig(pageSize = 20),
+            config = PagingConfig(pageSize = 10),
             pagingSourceFactory = pagingSourceFactory
         ).flow
     }

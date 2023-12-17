@@ -2,13 +2,13 @@ package com.example.capstone.data.api.response
 
 import com.google.gson.annotations.SerializedName
 
-data class TestResponse(
+data class AllFranchiseResponse(
 
-	@field:SerializedName("TestResponse")
-	val testResponse: List<TestResponseItem?>? = null
+	@field:SerializedName("franchises")
+	val franchises: List<FranchisesItem> = emptyList()
 )
 
-data class TestResponseItem(
+data class FranchisesItem(
 
 	@field:SerializedName("costs")
 	val costs: String? = null,

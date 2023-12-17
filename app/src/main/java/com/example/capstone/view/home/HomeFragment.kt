@@ -87,10 +87,10 @@ class HomeFragment : Fragment() {
             ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[HomeViewModel::class.java]
 
 
-        homeViewModel.getFranchises()
+//        homeViewModel.getFranchises()
         homeViewModel.franchises.observe(viewLifecycleOwner) { franchises ->
 
-            franchiseAdapter.submitList(franchises)
+            franchiseAdapter.submitData(lifecycle, franchises)
 
         }
 

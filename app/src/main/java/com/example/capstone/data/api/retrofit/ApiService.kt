@@ -1,10 +1,9 @@
 package com.example.capstone.data.api.retrofit
 
 import com.example.capstone.data.api.response.AllArticleResponse
+import com.example.capstone.data.api.response.AllFranchiseResponse
 import com.example.capstone.data.api.response.DetailArticleResponse
 import com.example.capstone.data.api.response.DetailFranchiseResponse
-import com.example.capstone.data.api.response.FranchiseResponse
-import com.example.capstone.data.api.response.FranchiseResponseItem
 import com.example.capstone.data.api.response.LoginResponse
 import com.example.capstone.data.api.response.ProfileImageResponse
 import com.example.capstone.data.api.response.ProfileResponse
@@ -54,8 +53,8 @@ interface ApiService {
     @GET("articles")
     suspend fun getArticles(
         @Header("Authorization") token: String,
-        @Query("page") page: Int = 1,
-        @Query("size") size: Int = 20
+        @Query("offset") offset: Int = 0,
+        @Query("limit") limit: Int = 10
     ): AllArticleResponse
 
     @GET("articles/{id}")
@@ -65,10 +64,17 @@ interface ApiService {
 
 
 
+//    @GET("franchises")
+//    suspend fun getFranchises(
+//        @Header("Authorization") token: String,
+//    ) : List<FranchiseResponseItem>
+
     @GET("franchises")
     suspend fun getFranchises(
-        @Header("Authorization") token: String,
-    ) : List<FranchiseResponseItem>
+        @Header("Authorization") token : String,
+        @Query("page") page : Int = 1,
+        @Query("size") size : Int = 10
+    ) : AllFranchiseResponse
 
 
     @GET("franchises/{id}")
@@ -76,6 +82,5 @@ interface ApiService {
         @Header("Authorization") token : String,
         @Path("id") id : String
     ) : Call <DetailFranchiseResponse>
-
 
 }
