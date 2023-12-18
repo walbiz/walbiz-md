@@ -8,8 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.capstone.R
 import com.example.capstone.database.Wishlist
 import com.example.capstone.databinding.ItemFranchiseBinding
+import com.example.capstone.databinding.ItemWishlistBinding
 import com.example.capstone.helper.WishlistDiffCallBack
 import com.example.capstone.view.franchise.DetailFranchiseActivity
 import kotlinx.coroutines.NonDisposableHandle.parent
@@ -30,7 +32,7 @@ class WishlistAdapter : RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder>
         parent: ViewGroup,
         viewType: Int
     ): WishlistViewHolder {
-        val binding = ItemFranchiseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemWishlistBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return  WishlistViewHolder(binding)
     }
 
@@ -43,26 +45,17 @@ class WishlistAdapter : RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder>
     }
 
 
-    class WishlistViewHolder(val binding : ItemFranchiseBinding) : RecyclerView.ViewHolder(binding.root) {
-
-//        val franchiseLogo : ImageView = binding.imageFranchise
-//        val nameFranchise : TextView = binding.nameFranchise
-//        val modalFranchise : TextView = binding.modalFranchise
-//        val categoryFranchise : TextView = binding.categoryFranchise
-
+    class WishlistViewHolder(val binding : ItemWishlistBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(wishlist : Wishlist) {
             binding.nameFranchise.text = wishlist.name
-            binding.modalFranchise.text = wishlist.costs
+            binding.modalFranchise.text = itemView.context.resources.getString(R.string.rp, wishlist.costs)
             binding.categoryFranchise.text = wishlist.category
+            binding.typeFranchise.text = wishlist.type
 
             Glide.with(itemView.context)
                 .load(wishlist.logoImageUrl)
                 .into(binding.imageFranchise)
-
-//            nameFranchise.text = wishlist.name
-//            modalFranchise.text = wishlist.costs
-//            categoryFranchise.text = wishlist.category
 
             val clickedFranchise = binding.root.context
 
@@ -70,12 +63,15 @@ class WishlistAdapter : RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder>
                 val intent = Intent(clickedFranchise, DetailFranchiseActivity::class.java)
 
                 intent.putExtra(DetailFranchiseActivity.EXTRA_ID, wishlist.id)
-                intent.putExtra(DetailFranchiseActivity.EXTRA_COSTS, wishlist.costs)
-                intent.putExtra(DetailFranchiseActivity.EXTRA_NAME, wishlist.name)
-                intent.putExtra(DetailFranchiseActivity.EXTRA_CATEGORY, wishlist.category)
+//                intent.putExtra(DetailFranchiseActivity.EXTRA_NAME, wishlist.name)
+//                intent.putExtra(DetailFranchiseActivity.EXTRA_COSTS, wishlist.costs)
+//                intent.putExtra(DetailFranchiseActivity.EXTRA_TYPE, wishlist.type)
+//                intent.putExtra(DetailFranchiseActivity.EXTRA_CATEGORY, wishlist.category)
+//                intent.putExtra(DetailFranchiseActivity.EXTRA_LOGO, wishlist.logoImageUrl)
 
                 clickedFranchise.startActivity(intent)
             }
+
         }
 
     }

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.R
 import com.example.capstone.SettingPreferences
@@ -125,7 +126,7 @@ class WishlistFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         wishlistAdapter = WishlistAdapter()
-        binding?.rvWishlist?.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding?.rvWishlist?.layoutManager = LinearLayoutManager(requireContext())
         binding?.rvWishlist?.setHasFixedSize(true)
         binding?.rvWishlist?.adapter = wishlistAdapter
 

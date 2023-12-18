@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.capstone.R
 import com.example.capstone.data.api.response.FranchisesItem
 import com.example.capstone.data.api.response.ListArticleItem
 import com.example.capstone.databinding.ItemFranchiseBinding
@@ -46,7 +47,7 @@ class FranchiseAdapter : PagingDataAdapter<FranchisesItem, FranchiseAdapter.MyVi
                 .into(franchiseLogo)
 
             nameFranchise.text = franchises.name
-            modalFranchise.text = franchises.costs
+            modalFranchise.text = itemView.context.resources.getString(R.string.rp, franchises.costs)
             categoryFranchise.text = franchises.category
 
 
@@ -58,6 +59,7 @@ class FranchiseAdapter : PagingDataAdapter<FranchisesItem, FranchiseAdapter.MyVi
                 intent.putExtra(DetailFranchiseActivity.EXTRA_ID, franchises.id)
                 intent.putExtra(DetailFranchiseActivity.EXTRA_NAME, franchises.name)
                 intent.putExtra(DetailFranchiseActivity.EXTRA_COSTS, franchises.costs)
+                intent.putExtra(DetailFranchiseActivity.EXTRA_TYPE, franchises.type)
                 intent.putExtra(DetailFranchiseActivity.EXTRA_CATEGORY, franchises.category)
                 intent.putExtra(DetailFranchiseActivity.EXTRA_LOGO, franchises.logoImageUrl)
 

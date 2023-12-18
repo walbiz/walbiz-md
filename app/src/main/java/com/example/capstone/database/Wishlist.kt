@@ -23,6 +23,9 @@ data class Wishlist(
     @ColumnInfo(name = "category")
     var category : String = "",
 
+    @ColumnInfo(name = "type")
+    var type : String = "",
+
     @ColumnInfo(name = "logoImageUrl")
     var logoImageUrl : String? = null,
 
