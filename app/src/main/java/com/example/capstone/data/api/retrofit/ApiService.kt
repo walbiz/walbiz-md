@@ -63,7 +63,6 @@ interface ApiService {
     ): DetailArticleResponse
 
 
-
 //    @GET("franchises")
 //    suspend fun getFranchises(
 //        @Header("Authorization") token: String,

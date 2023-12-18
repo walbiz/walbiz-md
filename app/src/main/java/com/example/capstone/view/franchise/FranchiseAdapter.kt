@@ -56,6 +56,11 @@ class FranchiseAdapter : PagingDataAdapter<FranchisesItem, FranchiseAdapter.MyVi
                 val intent = Intent(clickedFranchise, DetailFranchiseActivity::class.java)
 
                 intent.putExtra(DetailFranchiseActivity.EXTRA_ID, franchises.id)
+                intent.putExtra(DetailFranchiseActivity.EXTRA_NAME, franchises.name)
+                intent.putExtra(DetailFranchiseActivity.EXTRA_COSTS, franchises.costs)
+                intent.putExtra(DetailFranchiseActivity.EXTRA_CATEGORY, franchises.category)
+                intent.putExtra(DetailFranchiseActivity.EXTRA_LOGO, franchises.logoImageUrl)
+                
 
                 clickedFranchise.startActivity(intent)
             }

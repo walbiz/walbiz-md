@@ -29,4 +29,11 @@
         android:label="@string/franchise"
         tools:layout="@layout/fragment_franchise"/>
 
+    <fragment
+        android:id="@+id/wishlist_menu"
+        android:name="com.example.capstone.view.wishlist.WishlistFragment"
+        android:label="@string/wishlist"
+        tools:layout="@layout/fragment_wishlist"/>
+
+
 </navigation>

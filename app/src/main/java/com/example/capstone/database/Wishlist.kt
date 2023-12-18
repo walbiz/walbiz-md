@@ -20,9 +20,6 @@ data class Wishlist(
     @ColumnInfo(name = "name")
     var name : String = "",
 
-    @ColumnInfo(name = "type")
-    var type : String = "",
-
     @ColumnInfo(name = "category")
     var category : String = "",
 

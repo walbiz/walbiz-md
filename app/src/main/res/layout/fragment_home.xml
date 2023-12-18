@@ -28,7 +28,7 @@
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="155dp"
-            android:background="@color/blue"
+            android:background="@drawable/gradient_bg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

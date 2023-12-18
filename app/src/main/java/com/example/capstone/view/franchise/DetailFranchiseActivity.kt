@@ -2,6 +2,9 @@ package com.example.capstone.view.franchise
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.capstone.R
@@ -11,7 +14,10 @@ import com.example.capstone.data.api.FranchiseRepository
 import com.example.capstone.data.api.response.DetailFranchiseResponse
 import com.example.capstone.data.api.retrofit.ApiConfig
 import com.example.capstone.data.api.retrofit.ApiConfigML
+import com.example.capstone.database.Wishlist
 import com.example.capstone.databinding.ActivityDetailFranchiseBinding
+import com.example.capstone.insert.WishlistAddUpdateViewModel
+import com.example.capstone.view.wishlist.WishlistViewModelFactory
 
 class DetailFranchiseActivity : AppCompatActivity() {
 
@@ -19,6 +25,12 @@ class DetailFranchiseActivity : AppCompatActivity() {
     private lateinit var settingPreferences: SettingPreferences
     private lateinit var viewModel: DetailFranchiseViewModel
     private var token: String? = null
+
+    // wishlist
+    private var isEdit = false
+    private var wishlist : Wishlist? = null
+    private lateinit var wishlistAddUpdateViewModel: WishlistAddUpdateViewModel
+    // end wish list
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +53,88 @@ class DetailFranchiseActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString(EXTRA_ID, id)
 
+
+
+//        val name = intent.getStringExtra(EXTRA_NAME)
+//        detailViewModel.detailFranchise(franchiseRepository.toString(), name.toString())
+//
+//        val bundle = Bundle()
+//        bundle.putString(EXTRA_NAME, name)
+
+        // wishlist
+        val name = intent.getStringExtra(EXTRA_NAME)
+        val logo = intent.getStringExtra(EXTRA_LOGO)
+        val costs = intent.getStringExtra(EXTRA_COSTS)
+        val category = intent.getStringExtra(EXTRA_CATEGORY)
+
+        Log.d("NAMAA", name.toString())
+//        detailViewModel.detailFranchise(franchiseRepository.toString(), name.toString())
+//
+//        val bundle1 = Bundle()
+//        bundle.putString(EXTRA_NAME, name)
+        // end wishlist
+
+
         detailViewModel.detailFranchise.observe(this) { detailFranchise ->
             setDetailFranchise(detailFranchise)
         }
+
+        // Favorite
+        wishlistAddUpdateViewModel = obtainViewModel(this@DetailFranchiseActivity)
+
+        wishlist = intent.getParcelableExtra(EXTRA_WISHLIST)
+
+        if (wishlist != null) {
+            isEdit = true
+        } else {
+            wishlist = Wishlist()
+        }
+
+        wishlistAddUpdateViewModel.getAllWishlist(name.toString())
+            .observe(this, Observer { wishlistData ->
+                if (wishlistData != null) {
+                    isEdit = true
+                    wishlist = Wishlist(wishlistData.id, wishlistData.costs, wishlistData.name, wishlistData.category, wishlistData.logoImageUrl)
+                    Log.d("Added to wishlist", "Loged data != null")
+                    binding.wishButton.setImageResource(R.drawable.round_favorite_24)
+                } else {
+                    wishlist = Wishlist()
+                    Log.d("Deleted to wishlist", "Loged data null")
+                    binding.wishButton.setImageResource(R.drawable.round_favorite_border)
+                }
+            })
+
+        binding.wishButton.setOnClickListener {
+
+            Log.d("Data Room", name.toString())
+
+            wishlist.let { wishlist ->
+                wishlist!!.costs = costs.toString()
+                wishlist.name = name.toString()
+                wishlist.category = category.toString()
+                wishlist.logoImageUrl = logo
+
+            }
+
+
+
+            if (isEdit) {
+                wishlistAddUpdateViewModel.delete(wishlist as Wishlist)
+                binding.wishButton.setImageResource(R.drawable.round_favorite_border)
+                showToast("Deleted from wishlist")
+
+                isEdit = false
+            } else {
+                wishlistAddUpdateViewModel.insert(wishlist as Wishlist)
+                binding.wishButton.setImageResource(R.drawable.round_favorite_24)
+                showToast("Added to wishlist ")
+
+                isEdit =true
+            }
+//            isEdit = true
+        }
+
+        // End Favorite
 
 //
 //        viewModel.detailFranchise(franchiseRepository.toString(), id.toString())
@@ -82,7 +173,26 @@ class DetailFranchiseActivity : AppCompatActivity() {
             .into(binding.imageFranchise)
     }
 
+
+    // Wishlist
+
+    private fun obtainViewModel(activity: AppCompatActivity): WishlistAddUpdateViewModel {
+        val factory = WishlistViewModelFactory.getInstance(activity.application)
+        return ViewModelProvider(activity, factory).get(WishlistAddUpdateViewModel::class.java)
+    }
+
+    // End Wishlist
+
+    private  fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
     companion object {
         const val EXTRA_ID = "extra_id"
+        const val EXTRA_WISHLIST = "extra_wishlist"
+        const val EXTRA_NAME = "extra_name"
+        const val EXTRA_LOGO = "extra_logo"
+        const val EXTRA_COSTS = "extra_costs"
+        const val EXTRA_CATEGORY = "extra_category"
     }
 }
