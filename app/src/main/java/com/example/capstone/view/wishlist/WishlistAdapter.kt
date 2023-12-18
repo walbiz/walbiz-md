@@ -57,20 +57,20 @@ class WishlistAdapter : RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder>
                 .load(wishlist.logoImageUrl)
                 .into(binding.imageFranchise)
 
-            val clickedFranchise = binding.root.context
-
-            itemView.setOnClickListener {
-                val intent = Intent(clickedFranchise, DetailFranchiseActivity::class.java)
-
-                intent.putExtra(DetailFranchiseActivity.EXTRA_ID, wishlist.id)
-//                intent.putExtra(DetailFranchiseActivity.EXTRA_NAME, wishlist.name)
-//                intent.putExtra(DetailFranchiseActivity.EXTRA_COSTS, wishlist.costs)
-//                intent.putExtra(DetailFranchiseActivity.EXTRA_TYPE, wishlist.type)
-//                intent.putExtra(DetailFranchiseActivity.EXTRA_CATEGORY, wishlist.category)
-//                intent.putExtra(DetailFranchiseActivity.EXTRA_LOGO, wishlist.logoImageUrl)
-
-                clickedFranchise.startActivity(intent)
-            }
+//            val clickedFranchise = binding.root.context
+//
+//            itemView.setOnClickListener {
+//                val intent = Intent(clickedFranchise, DetailFranchiseActivity::class.java)
+//
+//                intent.putExtra(DetailFranchiseActivity.EXTRA_ID, wishlist.id)
+////                intent.putExtra(DetailFranchiseActivity.EXTRA_NAME, wishlist.name)
+////                intent.putExtra(DetailFranchiseActivity.EXTRA_COSTS, wishlist.costs)
+////                intent.putExtra(DetailFranchiseActivity.EXTRA_TYPE, wishlist.type)
+////                intent.putExtra(DetailFranchiseActivity.EXTRA_CATEGORY, wishlist.category)
+////                intent.putExtra(DetailFranchiseActivity.EXTRA_LOGO, wishlist.logoImageUrl)
+//
+//                clickedFranchise.startActivity(intent)
+//            }
 
         }
 

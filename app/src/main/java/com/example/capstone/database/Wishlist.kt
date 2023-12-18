@@ -26,6 +26,7 @@ data class Wishlist(
     @ColumnInfo(name = "type")
     var type : String = "",
 
+
     @ColumnInfo(name = "logoImageUrl")
     var logoImageUrl : String? = null,
 

@@ -59,7 +59,16 @@ class DetailFranchiseActivity : AppCompatActivity() {
         bundle.putString(EXTRA_ID, id)
 
 
+        // wishlist
+
+
         Log.d("NAMAA", name.toString())
+//        detailViewModel.detailFranchise(franchiseRepository.toString(), name.toString())
+//
+//        val bundle1 = Bundle()
+//        bundle.putString(EXTRA_NAME, name)
+        // end wishlist
+
 
         detailViewModel.detailFranchise.observe(this) { detailFranchise ->
             setDetailFranchise(detailFranchise)
