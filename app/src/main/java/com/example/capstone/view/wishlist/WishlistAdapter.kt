@@ -12,15 +12,15 @@ import com.example.capstone.database.Wishlist
 import com.example.capstone.databinding.ItemFranchiseBinding
 import com.example.capstone.helper.WishlistDiffCallBack
 import com.example.capstone.view.franchise.DetailFranchiseActivity
+import kotlinx.coroutines.NonDisposableHandle.parent
 
 class WishlistAdapter : RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder>() {
 
     private val listWishlist = ArrayList<Wishlist>()
 
-    fun setListWishlist(lisWishlist : List<Wishlist>) {
-        val diffCallBack = WishlistDiffCallBack(this.listWishlist, lisWishlist)
+    fun setListWishlist(listWishlist: List<Wishlist>) {
+        val diffCallBack = WishlistDiffCallBack(this.listWishlist, listWishlist)
         val diffResult = DiffUtil.calculateDiff(diffCallBack)
-
         this.listWishlist.clear()
         this.listWishlist.addAll(listWishlist)
         diffResult.dispatchUpdatesTo(this)
@@ -29,12 +29,12 @@ class WishlistAdapter : RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder>
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): WishlistAdapter.WishlistViewHolder {
+    ): WishlistViewHolder {
         val binding = ItemFranchiseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return  WishlistViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: WishlistAdapter.WishlistViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: WishlistViewHolder, position: Int) {
         holder.bind(listWishlist[position])
     }
 
@@ -49,6 +49,7 @@ class WishlistAdapter : RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder>
 //        val nameFranchise : TextView = binding.nameFranchise
 //        val modalFranchise : TextView = binding.modalFranchise
 //        val categoryFranchise : TextView = binding.categoryFranchise
+
 
         fun bind(wishlist : Wishlist) {
             binding.nameFranchise.text = wishlist.name
@@ -72,6 +73,7 @@ class WishlistAdapter : RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder>
                 intent.putExtra(DetailFranchiseActivity.EXTRA_COSTS, wishlist.costs)
                 intent.putExtra(DetailFranchiseActivity.EXTRA_NAME, wishlist.name)
                 intent.putExtra(DetailFranchiseActivity.EXTRA_CATEGORY, wishlist.category)
+
                 clickedFranchise.startActivity(intent)
             }
         }

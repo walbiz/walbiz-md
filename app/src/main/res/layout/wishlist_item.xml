@@ -38,16 +38,19 @@
                 android:id="@+id/name_franchise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="8dp"
                 android:text="Franchise Name"
+                android:layout_marginEnd="12dp"
                 android:fontFamily="@font/outfit_medium"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
 
                 <TextView
                     android:id="@+id/type_franchise"
@@ -67,15 +70,18 @@
                     android:fontFamily="@font/inter_reguler"
                     android:textSize="10sp"
                     android:drawableLeft="@drawable/icon_type2"
-                    android:drawablePadding="5dp"/>
+                    android:drawablePadding="5dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
             </LinearLayout>
 
             <TextView
                 android:id="@+id/modal_franchise"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="Rp. 1000.000"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
                 android:textSize="10sp"
                 android:drawableLeft="@drawable/icon_modal"
                 android:drawablePadding="8dp"/>
@@ -107,9 +113,10 @@
 
             <TextView
                 android:id="@+id/profit_franchise"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="Rp. 50.000.000 per month"
+                android:layout_marginEnd="10dp"
                 android:textSize="10sp"
                 android:drawableLeft="@drawable/icon_money"
                 android:drawablePadding="8dp"
@@ -117,9 +124,10 @@
 
             <TextView
                 android:id="@+id/duration_franchise"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="12 Month"
+                android:layout_marginEnd="10dp"
                 android:textSize="10sp"
                 android:drawableLeft="@drawable/icon_duration"
                 android:drawablePadding="8dp"

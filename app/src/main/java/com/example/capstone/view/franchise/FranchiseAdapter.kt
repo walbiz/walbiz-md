@@ -60,7 +60,7 @@ class FranchiseAdapter : PagingDataAdapter<FranchisesItem, FranchiseAdapter.MyVi
                 intent.putExtra(DetailFranchiseActivity.EXTRA_COSTS, franchises.costs)
                 intent.putExtra(DetailFranchiseActivity.EXTRA_CATEGORY, franchises.category)
                 intent.putExtra(DetailFranchiseActivity.EXTRA_LOGO, franchises.logoImageUrl)
-                
+
 
                 clickedFranchise.startActivity(intent)
             }
@@ -73,6 +73,7 @@ class FranchiseAdapter : PagingDataAdapter<FranchisesItem, FranchiseAdapter.MyVi
             override fun areItemsTheSame(oldItem: FranchisesItem, newItem: FranchisesItem): Boolean {
                 return oldItem.id == newItem.id
             }
+
 
             override fun areContentsTheSame(oldItem: FranchisesItem, newItem: FranchisesItem): Boolean {
                 return oldItem == newItem
