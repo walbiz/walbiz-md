@@ -1,0 +1,27 @@
+package com.example.capstone.data.api
+
+import android.icu.text.StringSearch
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import com.example.capstone.data.api.response.ListArticleItem
+import com.example.capstone.data.api.retrofit.ApiService
+import com.example.capstone.view.article.ArticlePagingSource
+import kotlinx.coroutines.flow.Flow
+
+class ArticleRepository(private val apiService: ApiService, private val token: String) {
+    fun getArticlesPaging(): Flow<PagingData<ListArticleItem>> {
+        val pagingSourceFactory = { ArticlePagingSource(apiService, token,null) }
+        return Pager(
+            config = PagingConfig(pageSize = 5),
+            pagingSourceFactory = pagingSourceFactory
+        ).flow
+    }
+    fun getArticleSearchPaging(search: String): Flow<PagingData<ListArticleItem>> {
+        val pagingSourceFactory = { ArticlePagingSource(apiService, token, search) }
+        return Pager(
+            config = PagingConfig(pageSize = 10),
+            pagingSourceFactory = pagingSourceFactory
+        ).flow
+    }
+}

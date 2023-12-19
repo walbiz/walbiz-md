@@ -1,11 +1,12 @@
-package com.example.capstone
+package com.example.capstone.view.wishlist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.capstone.R
 
-class MainActivity : AppCompatActivity() {
+class WishlistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_wishlist)
     }
 }
