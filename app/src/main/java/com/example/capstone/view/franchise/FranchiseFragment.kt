@@ -1,5 +1,6 @@
 package com.example.capstone.view.franchise
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -19,6 +20,9 @@ import com.example.capstone.data.api.retrofit.ApiConfigML
 import com.example.capstone.databinding.FragmentFranchiseBinding
 import com.example.capstone.view.article.ArticleViewModel
 import com.example.capstone.view.article.ArticleViewModelFactory
+import com.example.capstone.view.onBoarding.OnBoardingPageActivity
+import com.example.capstone.view.recomendation.RecomendationActivity
+import com.example.capstone.view.recomendation.RecomendationFragment
 
 class FranchiseFragment : Fragment() {
 
@@ -46,12 +50,15 @@ class FranchiseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         activity?.title = getString(R.string.franchise)
 
+        binding.progressBar.visibility = View.VISIBLE
+
         settingPreferences = SettingPreferences.getInstance(requireContext())
 
         recyclerView = binding.rvFranchise
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         franchiseAdapter = FranchiseAdapter()
+
         recyclerView.adapter = franchiseAdapter
 
         val franchiseRepository = FranchiseRepository(ApiConfigML.getApiService(), token ?: "")
@@ -62,17 +69,26 @@ class FranchiseFragment : Fragment() {
         franchiseViewModel =
             ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[FranchiseViewModel::class.java]
 
-
-//        franchiseViewModel.getFranchises()
         franchiseViewModel.franchises.observe(viewLifecycleOwner) { franchises ->
-
-//            franchiseAdapter.submitData(lifecycle, franchises)
-
             franchiseAdapter.submitData(lifecycle, franchises)
 
-//            Log.d("Franchise Fragment", franchiseAdapter.snapshot().items.toString())
+            binding.progressBar.visibility = View.GONE
         }
 
+        setupAction()
+
+    }
+
+    private fun setupAction() {
+
+        binding.btnTryNow.setOnClickListener {
+            startActivity(Intent(requireContext(), RecomendationActivity::class.java))
+        }
+
+    }
+
+    private fun showLoading(isLoading : Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
 }

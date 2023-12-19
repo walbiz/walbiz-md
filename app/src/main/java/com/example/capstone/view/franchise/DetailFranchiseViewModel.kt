@@ -20,17 +20,6 @@ class DetailFranchiseViewModel : ViewModel() {
     val detailFranchise : LiveData<DetailFranchiseResponse> = _detailFranchise
 
 
-//    fun detailFranchise() {
-//        viewModelScope.launch {
-//            franchiseRepository.getDetailFranchises().catch {
-//                _detailFranchise.value = null
-//            }.collect {
-//                _detailFranchise.value = it
-//            }
-//        }
-//    }
-
-
     fun detailFranchise(token : String, id: String) {
         val client = ApiConfigML.getApiService().getDetailFranchise(token, id)
         client.enqueue(object : Callback<DetailFranchiseResponse> {

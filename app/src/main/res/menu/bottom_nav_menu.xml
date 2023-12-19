@@ -19,7 +19,7 @@
 
     <item
         android:id="@+id/wishlist_menu"
-        android:icon="@drawable/round_favorite_border"
+        android:icon="@drawable/round_favorite_24"
         android:title="Wishlist" />
 
     <item

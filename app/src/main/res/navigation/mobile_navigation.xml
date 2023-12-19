@@ -27,13 +27,21 @@
         android:id="@+id/franchise_menu"
         android:name="com.example.capstone.view.franchise.FranchiseFragment"
         android:label="@string/franchise"
-        tools:layout="@layout/fragment_franchise"/>
+        tools:layout="@layout/fragment_franchise">
+
+    </fragment>
 
     <fragment
         android:id="@+id/wishlist_menu"
         android:name="com.example.capstone.view.wishlist.WishlistFragment"
         android:label="@string/wishlist"
         tools:layout="@layout/fragment_wishlist"/>
+
+    <fragment
+        android:id="@+id/recomendation_menu"
+        android:name="com.example.capstone.view.recomendation.RecomendationFragment"
+        android:label="@string/recomendation"
+        tools:layout="@layout/fragment_recomendation"/>
 
 
 </navigation>

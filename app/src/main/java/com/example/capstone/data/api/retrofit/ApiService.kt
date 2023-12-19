@@ -7,12 +7,17 @@ import com.example.capstone.data.api.response.DetailFranchiseResponse
 import com.example.capstone.data.api.response.LoginResponse
 import com.example.capstone.data.api.response.ProfileImageResponse
 import com.example.capstone.data.api.response.ProfileResponse
+import com.example.capstone.data.api.response.RecomendationRequest
+import com.example.capstone.data.api.response.RecomendationResponse
 import com.example.capstone.data.api.response.RegisterResponse
+import com.google.gson.JsonObject
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -76,5 +81,53 @@ interface ApiService {
         @Header("Authorization") token : String,
         @Path("id") id : String
     ) : Call <DetailFranchiseResponse>
+
+//    @FormUrlEncoded
+//    @POST("franchises/discover")
+//    suspend fun getRecomendation(
+//        @Header("Authorization") token: String,
+//        @Field("discover") discover: String
+//    ): List<RecomendationResponse>
+
+//    @POST("franchises/discover")
+//    suspend fun getRecomendation(
+//        @Body discover : String
+//    ): RecomendationResponse
+
+
+//     @POST("franchises/discover")
+//     suspend fun getRecomendation(
+//
+//     ) : RecomendationResponse
+
+
+     //INIIII
+
+//    @POST("franchises/discover")
+//    suspend fun getRecomendation(
+//        @Path ("discover") discover: String
+//    ): List<RecomendationResponse>
+
+     // END INII
+
+//    @FormUrlEncoded
+//    @POST("franchises/discover")
+//    suspend fun getRecomendation(
+//        @Field("discover") discover: String
+//    ): List<RecomendationResponse>
+
+
+    @Headers("Content-Type: application/json")
+    @POST("franchises/discover")
+    suspend fun getRecomendation(
+        @Body body : String
+    ): RecomendationResponse
+
+
+
+//    @POST("franchises/discover")
+//    suspend fun getRecomendation(
+//    @Body request: RecomendationRequest
+//    )  : RecomendationResponse
 
 }

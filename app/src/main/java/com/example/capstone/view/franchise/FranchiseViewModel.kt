@@ -17,6 +17,9 @@ class FranchiseViewModel (private val franchiseRepository: FranchiseRepository) 
     val franchises : LiveData<PagingData<FranchisesItem>> =
         franchiseRepository.getFranchises().cachedIn(viewModelScope).asLiveData()
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading : LiveData<Boolean> = _isLoading
+
 //    private val _franchises = MutableLiveData<List<FranchiseResponseItem>>()
 //    val franchises : LiveData<List<FranchiseResponseItem>> = _franchises
 

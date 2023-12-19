@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">capstone</string>
     <string name="welcome">Welcome to WalBiz!</string>
-    <string name="welcome_greeting">\"Empowering Local Business\"</string>
+    <string name="welcome_greeting">\"Empowering Local Businesses\"</string>
     <string name="login">Log In</string>
     <string name="register">Register</string>
     <string name="signin_greeting">Sign in to WalBiz!</string>v

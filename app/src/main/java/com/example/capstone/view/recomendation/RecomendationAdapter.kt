@@ -1,51 +1,46 @@
-package com.example.capstone.view.franchise
+package com.example.capstone.view.recomendation
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.capstone.R
 import com.example.capstone.data.api.response.FranchisesItem
-import com.example.capstone.data.api.response.ListArticleItem
+import com.example.capstone.data.api.response.RecomendationFranchisesItem
 import com.example.capstone.databinding.ItemFranchiseBinding
-import com.example.capstone.view.article.ArticleAdapter.Companion.DIFF_CALLBACK
+import com.example.capstone.view.franchise.DetailFranchiseActivity
 
-class FranchiseAdapter : PagingDataAdapter<FranchisesItem, FranchiseAdapter.MyViewHolder>(DIFF_CALLBACK) {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = ItemFranchiseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+class RecomendationAdapter : ListAdapter<RecomendationFranchisesItem, RecomendationAdapter.MyViewHolder>(DIFF_CALLBACK) {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecomendationAdapter.MyViewHolder {
+        val binding = ItemFranchiseBinding.inflate(LayoutInflater.from(parent.context), parent,false)
         return MyViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val franchises = getItem(position)
-        if (franchises != null) {
-            holder.bind(franchises)
+    override fun onBindViewHolder(holder: RecomendationAdapter.MyViewHolder, position: Int) {
+        val recomendation = getItem(position)
+        if (recomendation != null) {
+            holder.bind(recomendation)
         }
     }
 
-    class MyViewHolder (val binding : ItemFranchiseBinding) :RecyclerView.ViewHolder(binding.root) {
-
-        private val itemFranchise : View = binding.itemFranchise
+    class MyViewHolder(val binding : ItemFranchiseBinding) : RecyclerView.ViewHolder(binding.root) {
 
         val franchiseLogo : ImageView = binding.imageFranchise
         val nameFranchise : TextView = binding.nameFranchise
         val modalFranchise : TextView = binding.modalFranchise
         val categoryFranchise : TextView = binding.categoryFranchise
 
-
-        fun bind(franchises : FranchisesItem) {
+        fun bind(franchises : RecomendationFranchisesItem) {
             Glide.with(itemView.context)
                 .load(franchises.logoImageUrl)
-                .apply(RequestOptions().error(R.drawable.profile))
                 .into(franchiseLogo)
 
             nameFranchise.text = franchises.name
@@ -73,15 +68,22 @@ class FranchiseAdapter : PagingDataAdapter<FranchisesItem, FranchiseAdapter.MyVi
     }
 
     companion object {
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<FranchisesItem>() {
-            override fun areItemsTheSame(oldItem: FranchisesItem, newItem: FranchisesItem): Boolean {
+        val DIFF_CALLBACK = object  : DiffUtil.ItemCallback<RecomendationFranchisesItem>() {
+            override fun areItemsTheSame(
+                oldItem: RecomendationFranchisesItem,
+                newItem: RecomendationFranchisesItem
+            ): Boolean {
                 return oldItem.id == newItem.id
             }
 
-
-            override fun areContentsTheSame(oldItem: FranchisesItem, newItem: FranchisesItem): Boolean {
-                return oldItem == newItem
+            override fun areContentsTheSame(
+                oldItem: RecomendationFranchisesItem,
+                newItem: RecomendationFranchisesItem
+            ): Boolean {
+                return  oldItem == newItem
             }
+
         }
     }
+
 }

@@ -26,11 +26,9 @@ class DetailFranchiseActivity : AppCompatActivity() {
     private lateinit var viewModel: DetailFranchiseViewModel
     private var token: String? = null
 
-    // wishlist
     private var isEdit = false
     private var wishlist : Wishlist? = null
     private lateinit var wishlistAddUpdateViewModel: WishlistAddUpdateViewModel
-    // end wish list
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +36,6 @@ class DetailFranchiseActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         settingPreferences = SettingPreferences.getInstance(this)
-
 
         val detailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
             DetailFranchiseViewModel::class.java
@@ -58,16 +55,7 @@ class DetailFranchiseActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString(EXTRA_ID, id)
 
-
-        // wishlist
-
-
         Log.d("NAMAA", name.toString())
-//        detailViewModel.detailFranchise(franchiseRepository.toString(), name.toString())
-//
-//        val bundle1 = Bundle()
-//        bundle.putString(EXTRA_NAME, name)
-        // end wishlist
 
 
         detailViewModel.detailFranchise.observe(this) { detailFranchise ->
@@ -89,7 +77,7 @@ class DetailFranchiseActivity : AppCompatActivity() {
             .observe(this, Observer { wishlistData ->
                 if (wishlistData != null) {
                     isEdit = true
-                    wishlist = Wishlist(wishlistData.id, wishlistData.costs, wishlistData.name, wishlistData.category, wishlistData.type, wishlistData.logoImageUrl)
+                    wishlist = Wishlist(wishlistData.id, wishlistData.idFranchise, wishlistData.costs, wishlistData.name, wishlistData.category, wishlistData.type, wishlistData.logoImageUrl)
                     Log.d("Added to wishlist", "Loged data != null")
                     binding.wishButton.setImageResource(R.drawable.round_favorite_24)
                 } else {
@@ -104,14 +92,14 @@ class DetailFranchiseActivity : AppCompatActivity() {
             Log.d("Data Room", name.toString())
 
             wishlist.let { wishlist ->
-                wishlist!!.costs = costs.toString()
+                wishlist!!.idFranchise = id.toString()
+                wishlist.costs = costs.toString()
                 wishlist.name = name.toString()
                 wishlist.category = category.toString()
                 wishlist.type = type.toString()
                 wishlist.logoImageUrl = logo
 
             }
-
 
             if (isEdit) {
                 wishlistAddUpdateViewModel.delete(wishlist as Wishlist)
@@ -128,10 +116,7 @@ class DetailFranchiseActivity : AppCompatActivity() {
             }
         }
 
-        // End Favorite
-
     }
-
 
     private fun setDetailFranchise(franchise : DetailFranchiseResponse) {
 
@@ -155,7 +140,6 @@ class DetailFranchiseActivity : AppCompatActivity() {
             .into(binding.imageFranchise)
     }
 
-
     // Wishlist
 
     private fun obtainViewModel(activity: AppCompatActivity): WishlistAddUpdateViewModel {
@@ -177,9 +161,5 @@ class DetailFranchiseActivity : AppCompatActivity() {
         const val EXTRA_COSTS = "extra_costs"
         const val EXTRA_CATEGORY = "extra_category"
         const val EXTRA_TYPE = "extra_type"
-        const val EXTRA_EST = "extra_est"
-        const val EXTRA_OUTLET = "extra_outlet"
-        const val EXTRA_PROFIT = "extra_profit"
-        const val EXTRA_DURATION = "extra_duration"
     }
 }

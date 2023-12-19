@@ -14,6 +14,9 @@ data class Wishlist(
     @ColumnInfo(name = "id")
     var id : Int = 0,
 
+    @ColumnInfo(name = "idFranchise")
+    var idFranchise : String = "",
+
     @ColumnInfo(name = "costs")
     var costs : String = "",
 

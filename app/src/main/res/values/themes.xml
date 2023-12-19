@@ -6,8 +6,14 @@
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/app_background</item>
 
-        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowFullscreen">false</item>
     </style>
 
     <style name="Theme.Capstone" parent="Base.Theme.Capstone" />
+
+    <style name="NavigationStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+
+        <item name="android:color">@color/yellow</item>
+
+    </style>
 </resources>
