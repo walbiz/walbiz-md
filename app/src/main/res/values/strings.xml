@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">capstone</string>
+    <string name="app_name">WalBiz</string>
     <string name="welcome" translatable="false">Welcome to WalBiz!</string>
     <string name="welcome_greeting" translatable="false">\"Empowering Local Businesses\"</string>
     <string name="login">Log In</string>
@@ -28,7 +28,7 @@
     <string name="source">Source:</string>
     <string name="link_source" translatable="false">Link.com/path/path.path.path</string>
 
-    //Register
+<!--    Register-->
     <string name="register_page_title">Sign up to WalBiz!</string>
     <string name="title_form_confirm_password">Confirm Password</string>
     <string name="signup_button">Sign up</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">capstone</string>
+    <string name="app_name">WalBiz</string>
     <string name="welcome">Selamat datang di WalBiz!</string>
     <string name="login">Masuk</string>
     <string name="register">Daftar</string>
