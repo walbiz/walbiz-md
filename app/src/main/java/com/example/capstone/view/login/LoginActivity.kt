@@ -71,6 +71,11 @@ class LoginActivity : AppCompatActivity() {
                                     settingPreferences.saveEmail(email)
                                 }
 
+                                val userId = response.user?.id
+                                if (userId != null) {
+                                    settingPreferences.saveUserId(userId)
+                                }
+
                                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
                                 intent.putExtra("TOKEN", token)
                                 startActivity(intent)

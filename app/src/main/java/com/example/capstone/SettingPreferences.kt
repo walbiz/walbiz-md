@@ -16,12 +16,6 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
         @Volatile
         private var INSTANCE: SettingPreferences? = null
 
-        // try token
-//        private val EMAIL_KEY = stringPreferencesKey("email")
-//        private val TOKEN_KEY = stringPreferencesKey("token")
-//        private val IS_LOGIN_KEY = stringPreferencesKey("islogin")
-        // end token
-
         fun getInstance(context: Context): SettingPreferences {
             return INSTANCE ?: synchronized(this) {
                 val instance = SettingPreferences(context.dataStore)
@@ -35,6 +29,7 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
         val USER_TOKEN = stringPreferencesKey("token")
         val USER_NAME = stringPreferencesKey("user_name")
         val EMAIL = stringPreferencesKey("email")
+        val USERID = stringPreferencesKey("userId")
     }
 
     fun getToken(): Flow<String?> = dataStore.data.map { it[Keys.USER_TOKEN] }
@@ -49,6 +44,8 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
 
     fun getEmail(): Flow<String?> = dataStore.data.map { it[Keys.EMAIL] }
 
+    fun getUserId(): Flow<String?> = dataStore.data.map { it[Keys.USERID] }
+
     suspend fun saveUserName(userName: String) {
         dataStore.edit { preferences ->
             preferences[Keys.USER_NAME] = userName
@@ -58,6 +55,12 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
     suspend fun saveEmail(email: String) {
         dataStore.edit { preferences ->
             preferences[Keys.EMAIL] = email
+        }
+    }
+
+    suspend fun saveUserId(userId: String) {
+        dataStore.edit { preferences ->
+            preferences[Keys.USERID] = userId
         }
     }
 

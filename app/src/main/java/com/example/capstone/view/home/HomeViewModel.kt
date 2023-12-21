@@ -22,24 +22,7 @@ class HomeViewModel(
     val articleList : LiveData<PagingData<ListArticleItem>> =
         articleRepository.getArticlesPaging().cachedIn(viewModelScope).asLiveData()
 
-//    private val _franchises = MutableLiveData<List<FranchiseResponseItem>>()
-//    val franchises : LiveData<List<FranchiseResponseItem>> = _franchises
-
     val franchises : LiveData<PagingData<FranchisesItem>> =
         franchiseRepository.getFranchises().cachedIn(viewModelScope).asLiveData()
-
-//    fun getFranchises() {
-//        viewModelScope.launch {
-//            franchiseRepository.getFranchises().catch {
-//
-//                _franchises.value = listOf()
-//
-//            }.collect {
-//
-//                _franchises.value = it
-//
-//            }
-//        }
-//    }
 
 }

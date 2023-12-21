@@ -10,11 +10,6 @@ import com.example.capstone.databinding.FragmentRecomendationBinding
 
 class RecomendationFragment : Fragment() {
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//
-//    }
-
     private lateinit var binding : FragmentRecomendationBinding
 
     override fun onCreateView(

@@ -10,7 +10,14 @@ import kotlinx.coroutines.flow.Flow
 
 class ArticleRepository(private val apiService: ApiService, private val token: String) {
     fun getArticlesPaging(): Flow<PagingData<ListArticleItem>> {
-        val pagingSourceFactory = { ArticlePagingSource(apiService, token) }
+        val pagingSourceFactory = { ArticlePagingSource(apiService, token,null) }
+        return Pager(
+            config = PagingConfig(pageSize = 5),
+            pagingSourceFactory = pagingSourceFactory
+        ).flow
+    }
+    fun getArticleSearchPaging(search: String): Flow<PagingData<ListArticleItem>> {
+        val pagingSourceFactory = { ArticlePagingSource(apiService, token, search) }
         return Pager(
             config = PagingConfig(pageSize = 10),
             pagingSourceFactory = pagingSourceFactory

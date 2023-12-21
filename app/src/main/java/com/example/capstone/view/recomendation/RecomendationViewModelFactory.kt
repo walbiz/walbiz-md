@@ -2,7 +2,6 @@ package com.example.capstone.view.recomendation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.capstone.data.api.RecomendationRepository
 
 class RecomendationViewModelFactory () : ViewModelProvider.Factory {
 

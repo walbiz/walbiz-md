@@ -1,12 +1,10 @@
 package com.example.capstone.view.recomendation
 
-import android.media.session.MediaSession.Token
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.capstone.data.api.RecomendationRepository
 import com.example.capstone.data.api.response.RecomendationFranchisesItem
 import com.example.capstone.data.api.retrofit.ApiConfigML
 import kotlinx.coroutines.launch

@@ -20,22 +20,4 @@ class FranchiseViewModel (private val franchiseRepository: FranchiseRepository) 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading : LiveData<Boolean> = _isLoading
 
-//    private val _franchises = MutableLiveData<List<FranchiseResponseItem>>()
-//    val franchises : LiveData<List<FranchiseResponseItem>> = _franchises
-
-
-//    fun getFranchises() {
-//        viewModelScope.launch {
-//            franchiseRepository.getFranchises().catch {
-//
-//                _franchises.value = listOf()
-//
-//            }.collect {
-//
-//                _franchises.value = it
-//
-//            }
-//        }
-//    }
-
 }

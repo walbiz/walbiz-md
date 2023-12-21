@@ -16,8 +16,4 @@ class UserRepository {
         return apiService.login(email, password)
     }
 
-
-    // try get session
-
-    // end get sesion
 }

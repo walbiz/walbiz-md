@@ -37,34 +37,4 @@ class FranchisePagingSource (private val apiService: ApiService, private val tok
             anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
         }
     }
-
-
-
-
-//    override fun getRefreshKey(state: PagingState<Int, FranchiseResponseItem>): Int? {
-//        return state.anchorPosition?.let {anchorPosition ->
-//            val anchorPage = state.closestPageToPosition(anchorPosition)
-//            anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
-//        }
-//    }
-//
-//    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, FranchiseResponseItem> {
-//        return try {
-//            val position = params.key ?: INITIAL_PAGE_INDEX
-//            val responseData = apiService.getFranchises("Bearer $token",position, params.loadSize)
-//
-//            LoadResult.Page(
-//                data = responseData.franchiseResponse,
-//                prevKey = if (position == INITIAL_PAGE_INDEX) null else position -1,
-//                nextKey = if (responseData.franchiseResponse.isNullOrEmpty()) null else position +1
-//
-//            )
-//        } catch (e: Exception) {
-//            return LoadResult.Error(e)
-//        }
-//    }
-//
-//    private companion object {
-//        const val INITIAL_PAGE_INDEX = 1
-//    }
 }

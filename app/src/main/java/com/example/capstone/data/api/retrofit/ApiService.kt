@@ -5,12 +5,14 @@ import com.example.capstone.data.api.response.AllFranchiseResponse
 import com.example.capstone.data.api.response.DetailArticleResponse
 import com.example.capstone.data.api.response.DetailFranchiseResponse
 import com.example.capstone.data.api.response.LoginResponse
+import com.example.capstone.data.api.response.NewPhotoResponse
 import com.example.capstone.data.api.response.ProfileImageResponse
 import com.example.capstone.data.api.response.ProfileResponse
 import com.example.capstone.data.api.response.RecomendationRequest
 import com.example.capstone.data.api.response.RecomendationResponse
 import com.example.capstone.data.api.response.RegisterResponse
 import com.google.gson.JsonObject
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Field
@@ -18,16 +20,18 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
+import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.Part
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
     @FormUrlEncoded
-    @GET("users")
+    @GET("users/{userId}")
     suspend fun getUsersProfile(
         @Header("Authorization") token: String,
-        @Path("id") storyId: String
+        @Path("userId") userId: String
     ): ProfileResponse
 
     @FormUrlEncoded
@@ -38,14 +42,6 @@ interface ApiService {
         @Field("password") password: String,
         @Field("verifyPassword") verpassword: String
     ): RegisterResponse
-
-
-    @FormUrlEncoded
-    @POST("/uploads/profile/:userId")
-    suspend fun uploadImage(
-        @Field("verifyPassword") verpassword: String
-    ): ProfileImageResponse
-
 
     @FormUrlEncoded
     @POST("users/login")
@@ -62,10 +58,24 @@ interface ApiService {
         @Query("limit") limit: Int = 10
     ): AllArticleResponse
 
+    @GET("articles")
+    suspend fun getSearchArticlle(
+        @Query("search") token: String,
+        @Query("page") page: Int = 1,
+        @Query("size") size: Int = 5
+    ):AllArticleResponse
+
     @GET("articles/{id}")
     suspend fun getArticlesById(
         @Path("id") articleId: String
     ): DetailArticleResponse
+
+    @Multipart
+    @POST("uploads/profile/{userId}")
+    suspend fun uploadImage(
+        @Part file: MultipartBody.Part,
+        @Path("userId") userId: String
+    ): NewPhotoResponse
 
 
     @GET("franchises")
@@ -82,52 +92,11 @@ interface ApiService {
         @Path("id") id : String
     ) : Call <DetailFranchiseResponse>
 
-//    @FormUrlEncoded
-//    @POST("franchises/discover")
-//    suspend fun getRecomendation(
-//        @Header("Authorization") token: String,
-//        @Field("discover") discover: String
-//    ): List<RecomendationResponse>
-
-//    @POST("franchises/discover")
-//    suspend fun getRecomendation(
-//        @Body discover : String
-//    ): RecomendationResponse
-
-
-//     @POST("franchises/discover")
-//     suspend fun getRecomendation(
-//
-//     ) : RecomendationResponse
-
-
-     //INIIII
-
-//    @POST("franchises/discover")
-//    suspend fun getRecomendation(
-//        @Path ("discover") discover: String
-//    ): List<RecomendationResponse>
-
-     // END INII
-
-//    @FormUrlEncoded
-//    @POST("franchises/discover")
-//    suspend fun getRecomendation(
-//        @Field("discover") discover: String
-//    ): List<RecomendationResponse>
-
 
     @Headers("Content-Type: application/json")
     @POST("franchises/discover")
     suspend fun getRecomendation(
         @Body body : String
     ): RecomendationResponse
-
-
-
-//    @POST("franchises/discover")
-//    suspend fun getRecomendation(
-//    @Body request: RecomendationRequest
-//    )  : RecomendationResponse
 
 }

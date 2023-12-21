@@ -40,19 +40,6 @@ class DetailFranchiseViewModel : ViewModel() {
         })
     }
 
-//    fun detailFranchise(token : String, id : String) {
-//        viewModelScope.launch {
-//            try {
-//                val data = franchiseRepository.getDetailFranchiseById(token, id)
-//                _detailFranchise.value = data
-//            } catch (e : Exception) {
-//                Log.e(TAG, e.toString())
-//            }
-//        }
-//    }
-
-
-
     companion object {
         private const val TAG = "DetailStoryViewModel"
     }
